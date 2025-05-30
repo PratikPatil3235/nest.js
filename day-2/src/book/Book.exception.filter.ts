@@ -12,7 +12,7 @@ export class BookCustomeExceptionFilter implements ExceptionFilter{
         const status = exception.getStatus();
 
         response.status(status).json({
-            statusCode: status,
+            statusCode: 403,
             timeStamp: new Date().toDateString(),
             url: request.url,
             host:request.get("host")

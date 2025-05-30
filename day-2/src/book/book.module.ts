@@ -3,12 +3,12 @@ import { BookContoller } from './bookcontroller';
 import { BookMiddleware } from './book.middleware';
 
 @Module({
-    imports: [],
-    controllers: [BookContoller],
-    providers:[]
+  imports: [],
+  controllers: [BookContoller],
+  providers: [],
 })
-export class BookModule implements NestModule{
-    configure(consumer: MiddlewareConsumer) {
-        consumer.apply(BookMiddleware).forRoutes('book');
-    }
+export class BookModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(BookMiddleware).forRoutes('book');
+  }
 }

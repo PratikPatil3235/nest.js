@@ -1,15 +1,14 @@
-import { Controller, Get, Post } from "@nestjs/common";
+import { Controller, Get, Post } from '@nestjs/common';
 
-@Controller("user")
-export class UserContoller{
+@Controller('user')
+export class UserContoller {
+  @Get('/find')
+  findAllUsers(): string {
+    return `This will return all Users`;
+  }
 
-    @Get("/find")
-    findAllUsers():string {
-        return `This will return all Users`;
-    }
-
-    @Post("/addUser")
-    addUser(): string{
-        return `This will add a User`;
-    }
+  @Post('/addUser')
+  addUser(): string {
+    return `This will add a User`;
+  }
 }

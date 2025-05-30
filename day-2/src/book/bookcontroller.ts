@@ -28,6 +28,7 @@ export class BookContoller {
   }
 
   @Get('/find')
+  @HttpCode(206)
   @UseGuards(new BookGuard) // route level guard which will only check for this route
   findAllBooks(): string {
     return `This will return all Books`;

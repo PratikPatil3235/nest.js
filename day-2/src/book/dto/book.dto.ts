@@ -1,9 +1,9 @@
-import { IsInt, IsString } from "class-validator";
+import { IsInt, IsString } from 'class-validator';
 
-export class BookDto{
-    @IsInt()
-    id: number;
+export class BookDto {
+  @IsInt()
+  id: number;
 
-    @IsString()
-    name: string;
+  @IsString()
+  name: string;
 }
