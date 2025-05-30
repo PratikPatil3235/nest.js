@@ -29,7 +29,7 @@ function loggerMiddleWare(req: Request, res: Response, next: NextFunction) {
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(loggerMiddleWare);
-  app.useGlobalGuards(new BookGuard()) // global guard which checks for every route inside our application
+  // app.useGlobalGuards(new BookGuard()) // global guard which checks for every route inside our application
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

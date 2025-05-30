@@ -14,7 +14,6 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { BookDto } from './dto/book.dto';
-import { error } from 'console';
 import { BookException } from './book.exception';
 import { BookCustomeExceptionFilter } from './Book.exception.filter';
 import { BookGuard } from './book.guard';
@@ -29,7 +28,7 @@ export class BookContoller {
   }
 
   @Get('/find')
-//   @UseGuards(new BookGuard) // route level guard which will only check for this route
+  @UseGuards(new BookGuard) // route level guard which will only check for this route
   findAllBooks(): string {
     return `This will return all Books`;
   }
