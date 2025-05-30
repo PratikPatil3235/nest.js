@@ -143,6 +143,16 @@ app.useGlobalGuards(new RoleGuard());
 
 ### Custom Guard
 
+```
+@Injectable()
+export class RoleGuard implements CanActivate {
+  canActivate(context: ExecutionContext): boolean {
+    const request = context.switchToHttp().getRequest();
+    return request.headers['role'] === 'admin';
+  }
+}
+
+```
 
 ## 📌 Running the Project
 
